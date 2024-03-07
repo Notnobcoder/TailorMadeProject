@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { GoPerson } from "react-icons/go";
 import { IoSearchOutline, IoHeartOutline } from "react-icons/io5";
 import { MdOutlineShoppingBag } from "react-icons/md";
@@ -31,36 +32,22 @@ export default function Home() {
           </video>
         )}
 
-        <div className="absolute bg-yellow-500 top-0 p-4 transition-all hover:bg-white w-full flex items-center text-white hover:text-black justify-between px-4 ">
+        <div className="absolute top-0 p-4 transition-all hover:bg-white w-full flex items-center text-white hover:text-black justify-between px-4 ">
+          <div>
+            <h3 className="lg:text-3xl">Heading </h3>
+          </div>
           <div className="flex items-center gap-4 ">
             <IoSearchOutline size={19} />
             <GoPerson size={19} />
-            <IoHeartOutline size={19} />
-            <MdOutlineShoppingBag size={19} />
+            <Link href="/wishlist">
+              <IoHeartOutline size={19} />
+            </Link>
+            <Link href="/add-to-cart">
+              <MdOutlineShoppingBag size={19} />
+            </Link>
           </div>
         </div>
       </div>
-      {/* signature styles */}
-      {/* <div className="relative"> */}
-      {/*   <Image */}
-      {/*     className="w-full h-[90vh]" */}
-      {/*     src={"/video/testImage/back.avif"} */}
-      {/*     width={300} */}
-      {/*     height={300} */}
-      {/*     alt="image" */}
-      {/*   /> */}
-      {/*   <div className="absolute top-40 left-20"> */}
-      {/*     <Link href="/menu"> */}
-      {/*       <Image */}
-      {/*         src={"/video/testImage/t1.webp"} */}
-      {/*         alt="alternamte image" */}
-      {/*         width={400} */}
-      {/*         height={400} */}
-      {/*       /> */}
-      {/*     </Link> */}
-      {/*     <Button>hellot</Button> */}
-      {/*   </div> */}
-      {/* </div> */}
     </div>
   );
 }
