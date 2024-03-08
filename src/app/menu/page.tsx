@@ -29,8 +29,8 @@ const Menu = () => {
         <h4 className=" text-4xl font-bold">Products</h4>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 lg:grid-cols-3">
           {/* card */}
-          {[1, 2, 2, 2, 2, 2, 2, 2, 2, 6, 6, 6, 6, 6, 7].map(() => (
-            <div>
+          {[1, 2, 2, 2, 2, 2, 2, 2, 2, 6, 6, 6, 6, 6, 7].map((i, key) => (
+            <div key={key}>
               <ProductCard />
             </div>
           ))}
