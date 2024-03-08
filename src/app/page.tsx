@@ -1,14 +1,11 @@
 "use client";
 
+import { MultiCarousel } from "@/components/multiCarousel";
+import { VideoHeader } from "@/components/videoHeader";
+import Image from "next/image";
 import Link from "next/link";
-import { GoPerson } from "react-icons/go";
-import { IoSearchOutline, IoHeartOutline } from "react-icons/io5";
-import { MdOutlineShoppingBag } from "react-icons/md";
-import { useMediaQuery } from "react-responsive";
 
 export default function Home() {
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 500px)" });
-  const isBigScreen = useMediaQuery({ query: "(min-width: 500px)" });
   return (
     <div>
       {/* stripper */}
@@ -18,36 +15,49 @@ export default function Home() {
           <p className="underline">Details</p>
         </div>
       </div>
-
-      <div className="relative">
-        {isTabletOrMobile && (
-          <video muted loop autoPlay className="w-full h-auto">
-            <source src="/video/pv.mp4" type="video/mp4" />
-          </video>
-        )}
-
-        {isBigScreen && (
-          <video muted loop autoPlay className="w-full h-auto">
-            <source src="/video/opt11.mp4" type="video/mp4" />
-          </video>
-        )}
-
-        <div className="absolute top-0 p-4 transition-all hover:bg-white w-full flex items-center text-white hover:text-black justify-between px-4 ">
-          <div>
-            <h3 className="lg:text-3xl">Heading </h3>
-          </div>
-          <div className="flex items-center gap-4 ">
-            <IoSearchOutline size={19} />
-            <GoPerson size={19} />
-            <Link href="/wishlist">
-              <IoHeartOutline size={19} />
-            </Link>
-            <Link href="/add-to-cart">
-              <MdOutlineShoppingBag size={19} />
-            </Link>
-          </div>
+      {/*  video component */}
+      <VideoHeader />
+      {/* Signature Styles */}
+      <div className="my-4 relative">
+        <Image
+          className="w-full h-[90vh]"
+          src="/video/testImage/backN.jpeg"
+          alt="product image"
+          width={300}
+          height={300}
+        />
+        <div className="absolute flex items-center top-8 lg:left-8">
+          <Link href="/menu">
+            <Image
+              className="w-[604px] h-[637px] object-contain"
+              src="/video/testImage/t1.webp"
+              alt="product image"
+              width={300}
+              height={300}
+            />
+          </Link>
         </div>
       </div>
+
+      {/* more to explore */}
+      <div className="h-[70vh] my-4 items-center grid grid-cols-3">
+        {/* first */}
+        <div className="hidden lg:flex flex-col items-start col-span-1 justify-center px-7  h-[70vh]">
+          <h4 className="text-3xl">More To</h4>
+          <h6 className="text-6xl">Explore</h6>
+          <p className="text-3xl">
+            Discover curated edits and seasonal collections
+          </p>
+        </div>
+        <div className="lg:hidden ml-4 col-span-3">
+          <h4 className="text-4xl">More To Explore</h4>
+        </div>
+        <div className="col-span-3 lg:col-span-2">
+          <MultiCarousel />
+        </div>
+      </div>
+
+      {/* footer */}
     </div>
   );
 }

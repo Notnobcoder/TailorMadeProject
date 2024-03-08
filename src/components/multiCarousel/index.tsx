@@ -48,6 +48,30 @@ export const MultiCarousel = () => {
         width={400}
         height={400}
       />
+      <Image
+        src="/video/testImage/t1.webp"
+        alt="image slider"
+        width={400}
+        height={400}
+      />
+      <Image
+        src="/video/testImage/t1.webp"
+        alt="image slider"
+        width={400}
+        height={400}
+      />
+      <Image
+        src="/video/testImage/t1.webp"
+        alt="image slider"
+        width={400}
+        height={400}
+      />
+      <Image
+        src="/video/testImage/t1.webp"
+        alt="image slider"
+        width={400}
+        height={400}
+      />
     </Carousel>
   );
 };
